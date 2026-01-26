@@ -1,0 +1,21 @@
+{
+  "name": "mathias/bitt-php",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/",
+      "Service\\": "service/"
+    },
+    "files": [
+      "src/Helper/kernel.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Mathias Soto"
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "monolog/monolog": "^3.10"
+  }
+}
