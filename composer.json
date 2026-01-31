@@ -1,13 +1,13 @@
 {
-  "name": "mathias/bitt-php",
+  "name": "bitt/bitt-framework",
+  "description": "A minimal and powerful PHP framework for building fast, modern HTTP services.",
   "autoload": {
     "psr-4": {
       "App\\": "app/",
-      "Bitt\\": "src/Bitt/",
-      "Service\\": "service/"
+      "Bitt\\": "src/Bitt/"
     },
     "files": [
-      "src/Bitt/Helper/kernel.php"
+      "src/Bitt/Kernel/helpers.php"
     ]
   },
   "authors": [
