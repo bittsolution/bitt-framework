@@ -1,6 +1,6 @@
 <?php
 
-namespace Service\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Bitt\Http\Request;
 use Bitt\Http\Response;

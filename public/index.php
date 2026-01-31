@@ -4,8 +4,8 @@ use Bitt\Factory\HttpApplication;
 use Bitt\Http\Middleware\CookieMiddleware;
 use Bitt\Http\Middleware\CorsMiddleware;
 use Bitt\Http\Middleware\LoggerMiddleware;
-use Service\Http\Controllers\HomeController;
-use Service\Http\Controllers\TestController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TestController;
 
 define('BASE_PATH', dirname(__DIR__));
 

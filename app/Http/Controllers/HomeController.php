@@ -1,6 +1,6 @@
 <?php
 
-namespace Service\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Bitt\Http\Cookie;
 use Bitt\Http\Request;
