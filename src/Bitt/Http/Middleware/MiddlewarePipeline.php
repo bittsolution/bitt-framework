@@ -5,7 +5,7 @@ namespace Bitt\Http\Middleware;
 use Bitt\Http\Request;
 use Bitt\Http\Response;
 use Bitt\Http\Route;
-use Bitt\Kernel\ControllerResolver;
+use Bitt\Http\ControllerResolver;
 
 final class MiddlewarePipeline
 {

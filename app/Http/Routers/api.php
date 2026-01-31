@@ -5,7 +5,7 @@ use App\Http\Controllers\TestController;
 use Bitt\Http\Middleware\CookieMiddleware;
 use Bitt\Http\Middleware\CorsMiddleware;
 use Bitt\Http\Middleware\LoggerMiddleware;
-use Bitt\Kernel\Router;
+use Bitt\Http\Router;
 
 $router = new Router();
 

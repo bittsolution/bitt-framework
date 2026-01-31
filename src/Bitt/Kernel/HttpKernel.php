@@ -2,9 +2,11 @@
 
 namespace Bitt\Kernel;
 
+use Bitt\Http\ControllerResolver;
 use Bitt\Http\Middleware\MiddlewarePipeline;
 use Bitt\Http\Request;
 use Bitt\Http\Response;
+use Bitt\Http\RouterInterface;
 
 class HttpKernel implements KernelInterface
 {

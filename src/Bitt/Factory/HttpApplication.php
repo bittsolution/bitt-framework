@@ -5,7 +5,7 @@ namespace Bitt\Factory;
 use Bitt\Http\Request;
 use Bitt\Http\Response;
 use Bitt\Kernel\HttpKernel;
-use Bitt\Kernel\Router;
+use Bitt\Http\Router;
 
 class HttpApplication implements ApplicationInterface
 {

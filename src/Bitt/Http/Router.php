@@ -1,6 +1,6 @@
 <?php
 
-namespace Bitt\Kernel;
+namespace Bitt\Http;
 
 use Bitt\Http\Request;
 use Bitt\Http\Route;
