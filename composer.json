@@ -2,11 +2,11 @@
   "name": "mathias/bitt-php",
   "autoload": {
     "psr-4": {
-      "App\\": "src/",
+      "Bitt\\": "src/Bitt/",
       "Service\\": "service/"
     },
     "files": [
-      "src/Helper/kernel.php"
+      "src/Bitt/Helper/kernel.php"
     ]
   },
   "authors": [
