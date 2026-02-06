@@ -1,6 +1,6 @@
 <?php
 
-use Bitt\Factory\HttpApplication;
+use Pulsar\Factory\HttpApplication;
 
 define('BASE_PATH', dirname(__DIR__));
 

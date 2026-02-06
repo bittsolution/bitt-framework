@@ -1,13 +1,13 @@
 {
-  "name": "bitt/bitt-framework",
+  "name": "pulsar/framework",
   "description": "A minimal and powerful PHP framework for building fast, modern HTTP services.",
   "autoload": {
     "psr-4": {
       "App\\": "app/",
-      "Bitt\\": "src/Bitt/"
+      "Pulsar\\": "src/Pulsar/"
     },
     "files": [
-      "src/Bitt/Kernel/helpers.php"
+      "src/Pulsar/Kernel/helpers.php"
     ]
   },
   "authors": [

@@ -2,8 +2,8 @@
 
 namespace App\Http\Requests;
 
-use Bitt\Http\CustomRequest;
-use Bitt\Validation\RequestValidator;
+use Pulsar\Http\CustomRequest;
+use Pulsar\Validation\RequestValidator;
 
 class LoginRequest extends CustomRequest
 {

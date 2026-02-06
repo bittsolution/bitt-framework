@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Bitt\Http\Cookie;
-use Bitt\Http\Request;
-use Bitt\Http\Response;
-use Bitt\Logger\LoggerInterface;
+use Pulsar\Http\Cookie;
+use Pulsar\Http\Request;
+use Pulsar\Http\Response;
+use Pulsar\Logger\LoggerInterface;
 
 class HomeController
 {

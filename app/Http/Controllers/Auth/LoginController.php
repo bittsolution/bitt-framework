@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Requests\LoginRequest;
-use Bitt\Http\Cookie;
-use Bitt\Http\Response;
+use Pulsar\Http\Cookie;
+use Pulsar\Http\Response;
 
 class LoginController
 {
