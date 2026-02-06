@@ -2,6 +2,8 @@
 
 namespace Bitt\Http;
 
+use Bitt\Validation\RequestValidator;
+
 abstract class CustomRequest
 {
     private Request $request;
@@ -18,31 +20,19 @@ abstract class CustomRequest
 
     public function validate()
     {
-        $rules = $this->rules();
-        $errors = [];
-
-        foreach ($rules as $field => $fieldRules) {
-            $value = $this->request->body->get($field);
-
-            foreach ($fieldRules as $rule) {
-                if ($rule === 'required' && ($value === null || $value === '')) {
-                    $errors[$field][] = 'The ' . $field . ' field is required.';
-                }
-            }
+        try {
+            $this->rules(new RequestValidator($this));
+        } catch (\Exception $e) {
+            throw new \Exception('Validation failed: ' . $e->getMessage());
         }
-
-        if (!empty($errors)) {
-            throw new \Exception('Validation failed: ' . json_encode($errors));
-        }
-
         return true;
     }
 
-    abstract public function rules(): array;
+    abstract public function rules(RequestValidator $validator): void;
 
     abstract public function authorize(): bool;
 
-    protected function input(string $key, $default = null)
+    public function input(string $key, $default = null)
     {
         return $this->request->body->get($key, $default);
     }

@@ -7,6 +7,7 @@ use Bitt\Http\Response;
 use Bitt\Kernel\HttpKernel;
 use Bitt\Http\Router;
 
+
 class HttpApplication implements ApplicationInterface
 {
     private Router $router;
@@ -29,13 +30,32 @@ class HttpApplication implements ApplicationInterface
 
     public function run(): void
     {
-        $this->boot();
-        $request = Request::fromGlobals();
-        $response = new Response("", 200);
+        try {
+            $this->boot();
+            $request = Request::fromGlobals();
+            $response = new Response("", 200);
 
-        $kernel = new HttpKernel($this->router);
-        $response = $kernel->handle($request, $response);
-        $response->send();
+            $kernel = new HttpKernel($this->router);
+
+            $response = $kernel->handle($request, $response);
+            $response->send();
+        } catch (\Throwable $th) {
+            $this->error($th);
+        }
+    }
+
+    private function error(\Throwable $th): void
+    {
+        if (config()->app()->debug) {
+            $whoops = new \Whoops\Run;
+            $whoops->allowQuit(false);
+            $whoops->writeToOutput(false);
+            $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+            echo $whoops->handleException($th);
+        } else {
+            $response = new Response("Internal Server Error", 500);
+            $response->send();
+        }
     }
 
     public function setRouter(Router $router): void

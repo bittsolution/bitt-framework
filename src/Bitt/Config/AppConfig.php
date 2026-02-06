@@ -4,6 +4,7 @@ namespace Bitt\Config;
 
 class AppConfig
 {
+    public bool $debug;
     public string $serviceName;
     public string $environment;
     public string $logger;
@@ -11,6 +12,7 @@ class AppConfig
     public array $providers;
     public function __construct(array $config)
     {
+        $this->debug = $config['debug'] ?? false;
         $this->serviceName = $config['service_name'] ?? 'app';
         $this->environment = $config['environment'] ?? 'production';
         $this->logger = $config['logger'] ?? 'file';

@@ -3,15 +3,16 @@
 namespace App\Http\Requests;
 
 use Bitt\Http\CustomRequest;
+use Bitt\Validation\RequestValidator;
 
 class LoginRequest extends CustomRequest
 {
-    public function rules(): array
+    public function rules(RequestValidator $validator): void
     {
-        return [
-            'email' => ['required'],
-            'password' => ['required'],
-        ];
+        $validator
+            ->required(["email", "password"])
+            ->email($this->input("email"))
+            ->password($this->input("password"), 8);
     }
 
     public function authorize(): bool

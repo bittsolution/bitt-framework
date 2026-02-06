@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Requests\LoginRequest;
 use Bitt\Http\Cookie;
-use Bitt\Http\Request;
 use Bitt\Http\Response;
 
 class LoginController

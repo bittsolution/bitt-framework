@@ -27,11 +27,11 @@ class HttpKernel implements KernelInterface
     public function handle(Request $request, Response $response): Response
     {
         $route = $this->router->match($request);
-        $this->pipeline->setMiddlewares(array_merge($this->frameworkMiddlewares(), $route->middlewares()));
+        $this->pipeline->setMiddlewares(array_merge($this->coreMiddlewares(), $route->middlewares()));
         return $this->pipeline->handle($request, $response, $route);
     }
 
-    private function frameworkMiddlewares(): array
+    private function coreMiddlewares(): array
     {
         return [
             CorsMiddleware::class,

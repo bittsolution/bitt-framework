@@ -1,5 +1,6 @@
 <?php
 return [
+    "debug" => true,
     "service_name" => "app",
     "environment" => "development",
     "logger" => "console",
